@@ -1,31 +1,72 @@
 <h5>by digitalsignage.com</h5> 
 ==========
 
-cd /var/www/sites/mediasignage.com/htdocs/msRemoteValues
-http://digitalsignage.com:8080/remoteValues/nowServing.html
-http://digitalsignage.com:8080/remoteValues/terminal.html
-http://signage.me/demo/testQue.html
-http://signage.me/demo/sendCommand.js
 
 
-StudioLite, Digital Signage for the rest of us
+RemoteValues, sample project: customer queuing management
 ---------------------------------------
-
-current version: 1.1.56 dev-build
 
 ------------------------------------------------------------------------
 
-StudioLite is an open source, 100% FREE, Digital Signage platform that was designed with ease of use in mind.
-With StudioLite anyone can have a Digital Signage solution that is entirely customizable. 
-Take the source code, modify it, brand it and build a product that's right for you and your customers.
-Best of all, you will take full advantage of the world's most popular Digital Signage cloud so you don't have to worry about backend programming or even setup a server, it's all done for you using the mediaCLOUD.
+With DigitalSignage.com and RemoteValues, you can easily integrate a customer queuing managment tool into your business.
+This will allow your workers complete control over which number to display, as well as provide your customers with the ability to scan a QR code on the screen and keep monitoring their status in line from their mobile device.
+This means that your customers do not have to be confined in a room waiting to be served on, instead they can leave and stay up-to-date on when will they be served on.
 
- - Based on the poplar SignageStudio Pro ( [MediaSignage]: http://www.DigitalSignage.com )
- - Connected to a private mediaSERVER or the public free mediaCLOUD
- - 100% open source based on GNU V3 license
- - Contributors are welcome, fork, modify and send pull requests
+We provide the working sample code powered by node.js web server that can run on Windows, Linux or Mac.
+The application is organized into 4 modules.
 
-Links:
+1. server software which manages the current que being served as well as the HTML pages your works and customers will interface with.
+2. terminal.html is the user interface your employees will use to manage the que.
+3. nowServing.html is the user interface your customers will use to stay updated with their current que position (using QR and mobile phone)
+
+Server installation:
+------------------------------------------------------------------------
+To launch the server be sure to install node.js as well as the required modules:
+
+<pre>
+npm install express@3 (which express server 3.0)
+npm install jquery
+npm install underscore
+</pre>
+
+Launch the server using:
+
+<pre>
+node server.js
+</pre>
+
+The server by default listens to connection on port 8080
+
+User configuration and interaction
+------------------------------------------------------------------------
+Next edit terminal.html and nowServing.html and replace 'digitalsignage.com' with your server ip or DNS name.
+
+for example:
+
+<pre>
+document.domain = 'digitalsignage.com';
+var u = 'http://www.digitalsignage.com:8080/nowServing';
+</pre>
+
+<pre>
+document.domain = 'digitalsignage.com';
+$.ajax({
+ url: 'http://www.digitalsignage.com:8080/' + step,
+ ...
+</pre>
+
+Once the server is up and running you can launch:
+
+http://[YOUR_IP]:8080/remoteValues/nowServing.html
+http://[YOUR_IP]:8080/remoteValues/terminal.html
+
+Be sure to follow the video tutorial here:
+http://
+
+which will walk you through the StudioPro / SignagePlayer setup.
+
+
+Help Links:
 ------------------------------------------------------------------------
 - Cloud web app: https://galaxy.signage.me/_studiolite-dist/studiolite.html
 - Home: http://lite.digitalsignage.com

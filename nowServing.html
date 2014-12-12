@@ -33,10 +33,13 @@
 </head>
 <body>
 
-<!-- http://digitalsignage.com:8080/remoteValues/nowServing.html -->
-
 <div>
     <script type="text/javascript">
+
+        Date.prototype.timeNow = function () {
+            return ((this.getHours() < 10)?"0":"") + this.getHours() +":"+ ((this.getMinutes() < 10)?"0":"") + this.getMinutes() +":"+ ((this.getSeconds() < 10)?"0":"") + this.getSeconds();
+        }
+
         $(document).ready(function () {
             document.domain = 'digitalsignage.com';
             var u = 'http://www.digitalsignage.com:8080/nowServing';
@@ -50,9 +53,11 @@
                     contentType: "application/json",
                     success: function (res) {
                         $('#nowServing').text('serving: #' + res.nowServing);
+                        var lastRx = new Date().timeNow();
+                        $('#lastRx').text('last update: ' + lastRx);
                     },
                     error: function (res) {
-                        alert("Bad thing happend! " + res.statusText);
+                        alert("Oops, cant connect " + res.statusText);
                     }
                 });
             };
@@ -69,9 +74,7 @@
     <h1 id="nowServing"/>
 </div>
 <center>
-<img src="http://digitalsignage.com:8080/remoteValues/qrsample.png"/>
-    <p>scan QR to check your position in line</p>
-    <p>using your mobile phone...</p>
+    <p id="lastRx"></p>
 </center>
 <br/>
 <hr/>
