@@ -97,7 +97,7 @@ startServer(8080, function (err) {
             return false;
         }
         res.send('{"nowServing": "' + ++nowServing + '"}');
-        sendCommand("galaxy.signage.me", "d25@ms.com", "123123", "74", "setval", nowServing);
+        sendCommand("galaxy.signage.me", "d25@ms.com", "xxx", "74", "setval", nowServing);
     });
 
     app.all('/prev', function (req, res) {
@@ -110,7 +110,7 @@ startServer(8080, function (err) {
         res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.header("Access-Control-Allow-Origin", "*");
         res.send('{"nowServing": "' + --nowServing + '"}');
-        sendCommand("galaxy.signage.me", "d25@ms.com", "123123", "74", "setval", nowServing);
+        sendCommand("galaxy.signage.me", "d25@ms.com", "xxx", "74", "setval", nowServing);
     });
 
 
