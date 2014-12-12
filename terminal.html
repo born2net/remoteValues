@@ -1,6 +1,8 @@
 <html>
 <head>
-    <script src="http://www.digitalsignage.com/_js/jquery-1.7.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="http://signage.me/demo/sendCommand.js"></script>
+
     <style>
         body {
             font-family: 'arial';
@@ -8,8 +10,7 @@
         }
 
         h1 {
-            font-size: 7em;
-            text-align: center;
+            font-size: 2.35em;
             color: #a8a8a8;
         }
 
@@ -24,56 +25,50 @@
             background-image: -o-linear-gradient(left, #ccc, #333, #ccc);
         }
 
-        p {
-            font-size: 2.0em;
-            color: white;
-        }
-
     </style>
-</head>
-<body>
 
-<!-- http://digitalsignage.com:8080/remoteValues/nowServing.html -->
+    <!-- http://digitalsignage.com:8080/remoteValues/terminal.html -->
 
-<div>
     <script type="text/javascript">
+
         $(document).ready(function () {
-            document.domain = 'digitalsignage.com';
-            var u = 'http://www.digitalsignage.com:8080/nowServing';
-            var getServing = function () {
+            var sendValue = function (step) {
+                document.domain = 'digitalsignage.com';
+
                 $.ajax({
-                    url: u,
+                    url: 'http://www.digitalsignage.com:8080/' + step,
                     type: "POST",
                     crossDomain: true,
-                    data: JSON.stringify({a: 1}),
+                    data: JSON.stringify({req: 1}),
                     dataType: "json",
                     contentType: "application/json",
                     success: function (res) {
-                        $('#nowServing').text('serving: #' + res.nowServing);
+                        console.log(res.nowServing);
+                        $('#nowServing').text('now serving ticket: #' + res.nowServing);
                     },
                     error: function (res) {
                         alert("Bad thing happend! " + res.statusText);
                     }
                 });
+                return false;
             };
             $.support.cors = true;
-            setInterval(function () {
-                getServing();
-            }, 5000);
-            getServing();
+
+
+            $("#btn1").click(function () {
+                sendValue('next');
+            });
+
+            $("#btn2").click(function () {
+                sendValue('prev');
+            });
         });
     </script>
-</div>
-<hr/>
-<div>
-    <h1 id="nowServing"/>
-</div>
-<center>
-<img src="http://digitalsignage.com:8080/remoteValues/qrsample.png"/>
-    <p>scan QR to check your position in line</p>
-    <p>using your mobile phone...</p>
-</center>
-<br/>
-<hr/>
+</head>
+
+<body>
+<button id="btn1" style="width:200px;height:60">Next</button>
+<button id="btn2" style="width:200px;height:60">Prev</button>
+<h1 id="nowServing">now serving ticket: #0</h1>
 </body>
 </html>
