@@ -3,10 +3,8 @@
 
 
 
-RemoteValues, sample project: customer queuing management
+RemoteValues, customer que management
 ---------------------------------------
-
-------------------------------------------------------------------------
 
 With DigitalSignage.com and RemoteValues, you can easily integrate a customer queuing managment tool into your business.
 This will allow your workers complete control over which number to display, as well as provide your customers with the ability to scan a QR code on the screen and keep monitoring their status in line from their mobile device.
