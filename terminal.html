@@ -34,7 +34,6 @@
         $(document).ready(function () {
             var sendValue = function (step) {
                 document.domain = 'digitalsignage.com';
-
                 $.ajax({
                     url: 'http://www.digitalsignage.com:8080/' + step,
                     type: "POST",
@@ -62,13 +61,17 @@
             $("#btn2").click(function () {
                 sendValue('prev');
             });
+
+            setInterval(function(){
+                sendValue('nowServing');
+            },5000);
+
         });
     </script>
 </head>
-
-<body>
-<button id="btn1" style="width:200px;height:60">Next</button>
-<button id="btn2" style="width:200px;height:60">Prev</button>
-<h1 id="nowServing">now serving ticket: #0</h1>
-</body>
+    <body>
+        <button id="btn2" style="width:200px;height:60">Prev</button>
+        <button id="btn1" style="width:200px;height:60">Next</button>
+        <h1 id="nowServing">now serving ticket: #0</h1>
+    </body>
 </html>
