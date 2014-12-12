@@ -23,7 +23,7 @@ Server installation:
 To launch the server be sure to install node.js as well as the required modules:
 
 <pre>
-npm install express@3 (which express server 3.0)
+npm install express@3 (for express server v3.0)
 npm install jquery
 npm install underscore
 npm install path
@@ -35,7 +35,7 @@ Launch the server using:
 node server.js
 </pre>
 
-The server by default listens to connection on port 8080
+The server by default listens to connections on port 8080
 
 User configuration and interaction
 ------------------------------------------------------------------------
@@ -64,7 +64,7 @@ Be sure to follow the video tutorial at: htp://....
 which will walk you through the StudioPro / SignagePlayer setup and configuration.
 
 
-Landding page:
+Landing page:
 http://
 
 License:
