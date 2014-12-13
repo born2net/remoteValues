@@ -68,10 +68,10 @@ which will walk you through the StudioPro / SignagePlayer setup and configuratio
 
 More help:
 ------------------------------------------------------------------------
-Landing page RemoteValues: http://www.digitalsignage.com/_html/remotevalues.html
-Landing page RemoteTouch: http://www.digitalsignage.com/_html/remotetouch.html
-RemoteValues: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteValues
-RemoteTouch: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteTouch
+- Landing page RemoteValues: http://www.digitalsignage.com/_html/remotevalues.html
+- Landing page RemoteTouch: http://www.digitalsignage.com/_html/remotetouch.html
+- RemoteValues: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteValues
+- RemoteTouch: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteTouch
 
 License:
 ------------------------------------------------------------------------
