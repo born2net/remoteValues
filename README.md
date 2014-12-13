@@ -8,7 +8,7 @@ RemoteValues, customer que management
 
 With DigitalSignage.com and RemoteValues, you can easily integrate customer line queuing manager, a custom play score board, telemarketing progress board, or any other type of Digital Signage screen with custom labels.
 The real power comes from your own scripting logic. In other words, you can develop your business logic that's right for your company and feed the values into any label on the public digital signage screen.
-In this example we provide a working server to act as customer line counter queue manager; but this is just one example of many that could be incorporated.
+In this example we provide a working server to act as customer line counter; but this is just one example of many that could be incorporated.
 
 With the Queue manager, employees control which number is being served, as well as provide your customers with the ability to scan a QR code on the Digital Signage screen and keep monitoring their status in line from a mobile device.
 This means that your customers do not have to be confined in a room waiting to be served on, instead they can roam around and stay updated on current queue position.
@@ -62,12 +62,16 @@ Once the server is up and running you can launch:
 http://[YOUR_IP]:8080/remoteValues/nowServing.html
 http://[YOUR_IP]:8080/remoteValues/terminal.html
 
-Be sure to follow the video tutorial at: htp://....
+Be sure to follow the video tutorial at: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteCounter
 which will walk you through the StudioPro / SignagePlayer setup and configuration.
 
 
-Landing page:
-http://
+More help:
+------------------------------------------------------------------------
+Landing page RemoteValues: http://www.digitalsignage.com/_html/remotevalues.html
+Landing page RemoteTouch: http://www.digitalsignage.com/_html/remotetouch.html
+RemoteValues: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteValues
+RemoteTouch: http://www.digitalsignage.com/_html/signage_video.html?videoNumber=RemoteTouch
 
 License:
 ------------------------------------------------------------------------
