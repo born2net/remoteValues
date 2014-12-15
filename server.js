@@ -9,7 +9,7 @@ var _ = require('underscore');
 // config
 ///////////////
 var user = 'd25@ms.com'
-var pass = '123123';
+var pass = 'xxxxxx';
 var stationID = 217;
 var refreshTimer = 5000;
 
