@@ -8,7 +8,7 @@ var _ = require('underscore');
 ///////////////
 // config
 ///////////////
-var user = 'd25@ms.com'
+var user = 'd25@ms.com';
 var pass = 'xxxxxx';
 var stationID = 217;
 var refreshTimer = 5000;
@@ -33,9 +33,12 @@ function getDomain() {
     var url1 = 'https://galaxy.signage.me/WebService/getUserDomain.ashx?i_userpass=' + userpass64;
     $.get(url1, function (data) {
         var regexp = /(domain: ")(.*)(.signage)/ig;
-        domain = regexp.exec(data)[2];
-        // hack workaround until setval fixed
-        sendCommand("next", '10');
+        domain = regexp.exec(data);
+        if (_.isNull(domain)) {
+            console.log('wrong user or password');
+            process.exit();
+        }
+        domain= domain[2];
     });
 }
 
